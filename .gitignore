@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+VENV/
+
+# Logs
+*.log
+log/
+logs/
+
+# Temp files
+*.tmp
+*.temp
+*.part
+*~
+
+# Test data
+test_data/
+test_files/
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project specific
+temp/
+output/
+directories.txt
+files.txt

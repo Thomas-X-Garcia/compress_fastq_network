@@ -1,0 +1,11 @@
+# compress_fastq_network requirements
+# No external Python packages required - uses only Python standard library
+
+# System requirements (must be installed via package manager):
+# - pigz (parallel gzip)
+#   Ubuntu/Debian: apt-get install pigz
+#   RedHat/CentOS: yum install pigz
+#   macOS: brew install pigz
+
+# Optional but recommended:
+# - Python 3.7+ for better performance and reliability
