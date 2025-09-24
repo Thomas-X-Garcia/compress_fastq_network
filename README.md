@@ -8,11 +8,9 @@
 
 A data-integrity-focused, three-stage pipeline for compressing files stored on network filesystems (NFS/SMB/CIFS). While originally designed for FASTQ genomic data in clinical environments, this tool **can compress any file type** using the `--file-type` option (e.g., txt, bed, vcf, tsv, or any other extension). Built specifically for environments where data integrity is paramount and network-based operations pose inherent corruption risks.
 
-## Critical Context: When and Why to Use This Tool
+## When and Why to Use This Tool
 
-### The Clinical Data Integrity Challenge
-
-Compressing files directly on network filesystems presents significant data integrity risks that are unacceptable in clinical genomics:
+Compressing files, particularly large ones, directly on network filesystems presents significant data integrity risks that are unacceptable in clinical genomics:
 
 1. **Silent Corruption Risk**: Network filesystems can experience packet loss, timeout-related truncations, and cache inconsistencies that result in corrupted data without error notifications
 2. **Atomic Operation Failures**: Many network filesystems don't support true atomic operations, risking partial writes during compression
