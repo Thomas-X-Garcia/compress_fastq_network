@@ -32,7 +32,7 @@ This pipeline serves a **different purpose** than [process-raw-ont](https://gith
   - Strategy: Minimize corruption risk by doing compression locally, not over network
   - Use case: Files were transferred uncompressed to network storage and now need compression to save space
 
-### Why a Three-Stage Pipeline?
+### Three-Stage Pipeline
 
 The three-stage architecture specifically addresses the data integrity risks of network operations:
 
@@ -221,32 +221,6 @@ Network Drive          Local Temp           Network Drive
 - **Pros**: Predictable temp space usage, memory bounded
 - **Cons**: May reduce throughput if stages desync
 - **When to use**: Limited temp space, very large files
-
-### Recommended Configurations
-
-#### Clinical Production Environment
-```bash
---compress-queue 2 --upload-queue 2 --checksum sha256
-```
-Conservative settings prioritizing data integrity
-
-#### High-Throughput Research
-```bash
---compress-queue 4 --upload-queue 3
-```
-Balanced throughput with integrity verification
-
-#### Limited Local Storage
-```bash
---compress-queue 1 --upload-queue 1
-```
-Minimize temp space while maintaining safety
-
-#### Network with Known Issues
-```bash
---compress-queue 2 --upload-queue 1 --retries 5 --retry-wait 5
-```
-Extra retries and conservative queuing for unreliable networks
 
 ## Temp Space Requirements
 
